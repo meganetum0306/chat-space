@@ -7,18 +7,16 @@
 
 ### Association
 - has_many :messages
-- has_many :groups
 - has_many :groups, through: :groups_users
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|varchar(255)|null: false|
+|name|string|null: false|
 
 ### Association
-- belongs_to :user
+- bhas_many :users, through: :groups_users
 - has_many :messages
-- has_many :users, through: :groups_users
 
 ## messagesテーブル
 |Column|Type|Options|
