@@ -1,42 +1,35 @@
-!!!
-%html{:lang => "ja"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title chat-space
-  %body
-    .flash-box
-    .wrapper
-      .chat-side
-        .chat-side__side-header
-          .chat-side__side-header__box
-            %p.chat-side__side-header__box__user-name test-user
-            %ul.chat-side__side-header__box__menu
-              %li.chat-side__side-header__box__menu__new-group
-                %a{:href => "/groups/new"}
-                  %i.fa.fa-edit
-              %li.chat-side__side-header__box__menu__edit-user
-                %a{:href => "/users/191/edit"}
-                  %i.fa.fa-cog
-        .chat-side__groups
-          = render 'messages/group', group: @group
-      .chat-main
-        .chat-main__main-header
-          .chat-main__main-header__left-box
-            %h2.chat-main__main-header__left-box--current-group{"data-group_id" => ""}
-              テスト
-            %ul.chat-main__main-header__left-box--member-list
-              Member：
-              %li.chat-main__main-header__left-box__member-list--member test-user2
-          %a{:href => "/groups/279/edit"}
-            .chat-main__main-header__edit-btn Edit
-        .chat-main__messages
-          = render 'messages/message', message: @message
-        .chat-main__form
-          %form#new_message.chat-main__form__new_messages{"accept-charset" => "UTF-8", :actuon => "", :enctype => "multipart/form-deta", :method => "post"}
-            %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-            .chat-main__form__new_messages__input-box
-              %input#message_content.chat-main__form__new_messages__input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-              %label.chat-main__form__new_messages__input-box__image{:for => "message_image"}
-                %i.fa.fa-image
-                %input#message_image.chat-main__form__new_messages__input-box__image--file{:name => "message[image]", :type => "file"}/
-            %input.chat-main__form__new_messages--submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+.wrapper
+  .chat-side
+    .chat-side__side-header
+      .chat-side__side-header__box
+        %p.chat-side__side-header__box__user-name test-user
+        %ul.chat-side__side-header__box__menu
+          %li.chat-side__side-header__box__menu__new-group
+            = link_to "", class: "btn" do
+              %i.fa.fa-edit
+          %li.chat-side__side-header__box__menu__edit-user
+            = link_to "", class: "btn" do
+              %i.fa.fa-cog
+    .chat-side__groups
+      = render 'messages/group', group: @group
+  .chat-main
+    .chat-main__main-header
+      .chat-main__main-header__left-box
+        %h2.chat-main__main-header__left-box--current-group{"data-group_id" => ""}
+          テスト
+        %ul.chat-main__main-header__left-box--member-list
+          Member：
+          %li.chat-main__main-header__left-box__member-list--member test-user2
+      = link_to "", class: "btn" do
+        .chat-main__main-header__edit-btn Edit
+    .chat-main__messages
+      = render 'messages/message', message: @message
+    .chat-main__form
+      %form#new_message.chat-main__form__new_messages{"accept-charset" => "UTF-8", :actuon => "", :enctype => "multipart/form-deta", :method => "post"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+        .chat-main__form__new_messages__input-box
+          %input#message_content.chat-main__form__new_messages__input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+          %label.chat-main__form__new_messages__input-box__image{:for => "message_image"}
+            %i.fa.fa-image
+            %input#message_image.chat-main__form__new_messages__input-box__image--file{:name => "message[image]", :type => "file"}/
+        %input.chat-main__form__new_messages--submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
