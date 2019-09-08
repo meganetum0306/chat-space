@@ -1,17 +1,5 @@
 .wrapper
-  .chat-side
-    .chat-side__side-header
-      .chat-side__side-header__box
-        %p.chat-side__side-header__box__user-name test-user
-        %ul.chat-side__side-header__box__menu
-          %li.chat-side__side-header__box__menu__new-group
-            = link_to "", class: "btn" do
-              %i.fa.fa-edit
-          %li.chat-side__side-header__box__menu__edit-user
-            = link_to "", class: "btn" do
-              %i.fa.fa-cog
-    .chat-side__groups
-      = render 'messages/group', group: @group
+  = render 'shared/side_bar'
   .chat-main
     .chat-main__main-header
       .chat-main__main-header__left-box

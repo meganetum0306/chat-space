@@ -1,11 +1,12 @@
-.chat-side__groups__group {
+.group {
   margin-bottom: 40px;
   cursor: pointer;
-  &--group-name {
+  color: white;
+  &--name {
     font-size: 15px;
     margin-bottom: 5px;
   }
-  &--latest-message {
+  &--message {
     font-size: 11px;
   }
 }

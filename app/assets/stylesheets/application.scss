@@ -1,6 +1,11 @@
 @import "./reset";
 @import "font-awesome";
 @import "variable";
+@import "modules/user";
+@import "config/colors";
+@import "modules/flash";
+@import "modules/group";
+
 
 .flash-box {
   color: $main-color;
@@ -10,33 +15,35 @@
   width: 100vw;
 }
 
-.chat-side {
+.side-bar {
   width: 300px;
   color: $main-color;
   float: left;
-  &__side-header {
+  &__header {
     background-color: #253141;
     height: 100px;
     display: flex;
     align-items: center;
     padding: 0 20px;
-    &__box {
+    &__header__name {
       display: flex;
       justify-content: space-between;
       width: 100%;
       font-weight: bold;
-      &__menu {
+      &__header__lists {
         display: flex;
-        &__new-group {
+        &--list {
           margin-left: 0.3rem;
-          .fa-edit {
+          font-size: inherit;
+          .icon {
             color: $main-color;
           }
         }
         
-        &__edit-user {
+        &--list {
           margin-left: 0.3rem;
-          .fa-cog {
+          font-size: inherit;
+          .icon {
             color: $main-color;
           }
         }
@@ -49,8 +56,8 @@
     background-color: #2f3e51;
     padding: 20px 20px 0;
     overflow: scroll;
-    @import "group";
   }
+    @import "groups";
 }
 
 .chat-main {
