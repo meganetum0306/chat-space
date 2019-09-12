@@ -11,7 +11,7 @@
       = link_to "", class: "btn" do
         .chat-main__main-header__edit-btn Edit
     .chat-main__messages
-      = render 'messages/message', message: @message
+      = render @messages
     .chat-main__form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'chat-main__form__new_messages__input-box__text', placeholder: 'type a message'
