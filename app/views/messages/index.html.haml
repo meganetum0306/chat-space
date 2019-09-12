@@ -13,11 +13,10 @@
     .chat-main__messages
       = render 'messages/message', message: @message
     .chat-main__form
-      %form#new_message.chat-main__form__new_messages{"accept-charset": "UTF-8", actuon: "", enctype: "multipart/form-deta", method: "post"}
-        %input{name: "utf8", type: "hidden", value: "✓"}/
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'chat-main__form__new_messages__input-box__text', placeholder: 'type a message'
         .chat-main__form__new_messages__input-box
-          %input#message_content.chat-main__form__new_messages__input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
-          %label.chat-main__form__new_messages__input-box__image{for: "message_image"}
-            %i.fa.fa-image
-            %input#message_image.chat-main__form__new_messages__input-box__image--file{name: "message[image]", type: "file"}/
-        %input.chat-main__form__new_messages--submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
+          = f.label :image, class: 'chat-main__form__new_messages__input-box__image' do
+            = fa_icon 'picture-o', class: 'fa-image'
+            = f.file_field :image, class: 'chat-main__form__new_messages__input-box__image--file'
+        = f.submit 'Send', class: 'chat-main__form__new_messages--submit-btn'
