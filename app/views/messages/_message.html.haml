@@ -1,5 +1,11 @@
-.chat-main__messages__message{"data-message_id" => "410"}
+.chat-main__messages__message
   .chat-main__messages__message__upper-info
-    %p.chat-main__messages__message__upper-info--talker test-user
-    %p.chat-main__messages__message__upper-info--data 2019/08/31(Sat) 17:34:53
-  %p.chat-main__messages__message--text こんにちは
+    .chat-main__messages__message__upper-info--talker
+      = message.user.name
+    .chat-main__messages__message__upper-info--data
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .chat-main__messages__message--text
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
