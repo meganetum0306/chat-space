@@ -111,11 +111,12 @@
     height: 90px;
     padding: 20px 40px;
     background-color: #ddd;
-    &__new_messages {
+    .new_message {
       display: flex;
+    }
+    &__new_messages {
       &__input-box {
         position: relative;
-        width: 100%;
         &__text {
           height: 50px;
           width: 100%;
@@ -129,7 +130,7 @@
           top: 10px;
           right: 10px;
           cursor: pointer;
-          .fa-image {
+          .fa {
             display: inline-block;
             font: normal normal normal 14px/1 FontAwesome;
             font-size: inherit;
