@@ -3,7 +3,7 @@
     .chat-main__messages__message__upper-info--talker
       = message.user.name
     .chat-main__messages__message__upper-info--data
-      = message.created_at.strftime("%Y/%m/%d %H:%M")
+      = message.created_at.strftime("%Y/%m/%d/(%a) %T")
   .chat-main__messages__message--text
     - if message.content.present?
       %p.lower-message__content
