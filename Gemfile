@@ -79,3 +79,4 @@ gem 'devise'
 gem 'rails-ujs'
 
 gem 'carrierwave'
+gem 'fog-aws'
