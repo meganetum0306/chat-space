@@ -80,5 +80,5 @@ gem 'devise'
 
 gem 'rails-ujs'
 
-gem 'carrierwave'
+# gem 'carrierwave'
 gem 'fog-aws'
