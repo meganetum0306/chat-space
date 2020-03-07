@@ -53,3 +53,8 @@ production:
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
+
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
