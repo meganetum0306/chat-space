@@ -82,4 +82,3 @@ gem 'rails-ujs'
 
 gem 'carrierwave'
 gem 'fog-aws'
-gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
